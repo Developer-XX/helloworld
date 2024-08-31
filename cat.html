@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Facts</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <!-- <h1>Cat Random Facts</h1>
+
+    <h3></h3>
+
+    <button>Show Facts</button>
+     -->
+
+     <h1>Dog Random Image</h1>
+
+    <img src="#" alt="">
+
+    <button>Show Image</button>
+    
+    <script>
+        // let button = document.querySelector("button");
+
+        // let h3 = document.querySelector("h3");
+
+        // button.addEventListener("click", async ()=>{
+        //     let res = await showFacts();
+            
+        //     h3.innerText = res;
+        // });
+
+        // async function showFacts() {
+        //     let url = "https://catfact.ninja/fact";
+
+        //     try{
+        //     let res = await axios.get(url);
+
+        //     return res.data.fact;
+        //     }
+        //     catch(err){
+        //     return "No Fact Found",err;
+        // }
+
+        // }
+
+
+        let button = document.querySelector("button");
+
+        let img = document.querySelector("img");
+
+        button.addEventListener("click",async ()=>{
+            let url = await showImg();
+            img.setAttribute("src",url);
+        });
+
+        async function showImg() {
+            let url = "https://dog.ceo/api/breeds/image/random";
+            try{
+            let res = await axios.get(url);
+            return res.data.message;
+            }
+            catch(err){
+                console.log("Error - ",err);
+            }
+        }
+
+
+    </script>
+</body>
+</html>
